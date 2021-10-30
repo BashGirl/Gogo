@@ -6,8 +6,10 @@
 
   <ItemGroup>
     <None Remove="ModelData\" />
+    <None Remove="Service\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ModelData\" />
+    <Folder Include="Service\" />
   </ItemGroup>
 </Project>
