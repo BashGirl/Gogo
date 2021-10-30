@@ -4,4 +4,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="ModelData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ModelData\" />
+  </ItemGroup>
 </Project>

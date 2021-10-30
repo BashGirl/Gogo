@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Gogo
+namespace Gogo.ModelData
 {
     public class WeatherForecast
     {
