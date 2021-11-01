@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Gogo.ModelData;
+using Gogo.Service;
 
 namespace Gogo.Controllers
 {
@@ -9,15 +10,17 @@ namespace Gogo.Controllers
     [Route("[controller]")]
     public class ExperienceController : ControllerBase
     {
-        public ExperienceController()
+        private IExperienceService _experienceService; // queste tre righe sono la DI(dependency Injection)
+
+        public ExperienceController(IExperienceService experienceService)
         {
+          _experienceService = experienceService;
         }
 
         [HttpGet]
-        public IEnumerable<Experience> Get()
+        public IEnumerable<ExperienceDTO> Get()
         {
-            NotFound();
-            return (IEnumerable<Experience>)Array.Empty<object>();
+            return _experienceService.GetAllDTO();
         }
     }
 }

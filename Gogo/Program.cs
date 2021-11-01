@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
+using Gogo.Service;
 
 namespace Gogo
 {
@@ -21,6 +23,10 @@ namespace Gogo
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                })
+                .ConfigureServices((_, services) =>
+                {
+                    services.AddSingleton<IExperienceService, ExperienceService>();
                 });
     }
 }

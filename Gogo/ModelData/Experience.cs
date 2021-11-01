@@ -38,6 +38,15 @@ namespace Gogo.ModelData
         {
             Description = D;
         }
+
+        public ExperienceDTO ToDTO()
+        {
+            return new ExperienceDTO
+            {
+                Description = Description,
+                Name = Name
+            };
+        }
     }
 
 }
