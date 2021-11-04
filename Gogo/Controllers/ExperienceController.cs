@@ -12,12 +12,10 @@ namespace Gogo.Controllers
     public class ExperienceController : ControllerBase
     {
         private IExperienceService _experienceService; // queste tre righe sono la DI(dependency Injection)
-        private HttpContext context;
 
-        public ExperienceController(IExperienceService experienceService, HttpContext httpContext)
+        public ExperienceController(IExperienceService experienceService)
         {
           _experienceService = experienceService;
-            context = httpContext;
         }
 
         public object HttpServerUtility { get; private set; }
@@ -29,11 +27,11 @@ namespace Gogo.Controllers
         }
 
         [HttpPost]
-        public IEnumerable<ExperienceDTO> Post([FromBody] model)
+        public IEnumerable<ExperienceDTO> Post([FromBody] ExperienceDTO m)
         {
 
             return _experienceService.GetAllDTO();
-        }
+        }  
 
     }
 

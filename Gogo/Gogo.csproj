@@ -15,4 +15,10 @@
     <None Remove="ModelData\" />
     <None Remove="Service\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Service\ExperienceService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Service\" />
+  </ItemGroup>
 </Project>
