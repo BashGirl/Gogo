@@ -27,8 +27,9 @@ namespace Gogo.Controllers
         }
 
         [HttpPost]
-        public IEnumerable<ExperienceDTO> Post([FromBody] ExperienceDTO m)
+        public IEnumerable<ExperienceDTO> Post([FromBody] ExperienceDTO experienceDTO)
         {
+            _experienceService.AddToList(experienceDTO);
 
             return _experienceService.GetAllDTO();
         }  

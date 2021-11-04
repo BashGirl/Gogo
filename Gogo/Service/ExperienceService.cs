@@ -7,6 +7,8 @@ namespace Gogo.Service
     public interface IExperienceService
     {
         public List<ExperienceDTO> GetAllDTO();
+
+        public void AddToList(ExperienceDTO experienceDTO);
     }
 
     public class ExperienceService : IExperienceService
@@ -41,6 +43,14 @@ namespace Gogo.Service
             list.ForEach(exp => listDTO.Add(exp.ToDTO()));
 
             return listDTO;
+        }
+
+        public void AddToList(ExperienceDTO experienceDTO)
+        {
+            Experience e2 = new Experience(experienceDTO.Name);
+            e2.SetLocation(experienceDTO.Location);
+            e2.SetDescription(experienceDTO.Description);
+            list.Add(e2);
         }
     }
 }
