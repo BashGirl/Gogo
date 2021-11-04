@@ -44,7 +44,8 @@ namespace Gogo.ModelData
             return new ExperienceDTO
             {
                 Description = Description,
-                Name = Name
+                Name = Name,
+                Location = Location,
             };
         }
     }
