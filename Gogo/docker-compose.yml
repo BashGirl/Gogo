@@ -1,0 +1,17 @@
+﻿version: "3.8"
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=P@ssw0rd
+    volumes:
+      - mssqlsystem:/var/opt/mssql
+      - mssqldata:/var/opt/sqlserver
+volumes:
+  mssqlsystem:
+    driver: local
+  mssqldata:
+    driver: local
