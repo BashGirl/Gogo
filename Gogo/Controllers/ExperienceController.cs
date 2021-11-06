@@ -23,6 +23,7 @@ namespace Gogo.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<ExperienceDTO>> Get()
         {
+            _experienceService.TestBlogging();
             return _experienceService.GetAllDTO(); 
         }
 

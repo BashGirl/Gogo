@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Gogo.ModelData;
 
 namespace Gogo.Service
@@ -9,6 +10,8 @@ namespace Gogo.Service
         public List<ExperienceDTO> GetAllDTO();
 
         public void AddToList(ExperienceDTO experienceDTO);
+
+        public void TestBlogging();
     }
 
     public class ExperienceService : IExperienceService
@@ -51,6 +54,16 @@ namespace Gogo.Service
             e2.SetLocation(experienceDTO.Location);
             e2.SetDescription(experienceDTO.Description);
             list.Add(e2);
+        }
+
+        public void TestBlogging()
+        {
+            var db = new BloggingContext();
+            
+            var blogs = db.Blogs
+                .Where(b => b.Rating > 3)
+                .OrderBy(b => b.Url)
+                .ToList();
         }
     }
 }
