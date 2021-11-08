@@ -21,14 +21,14 @@ namespace Gogo.Controllers
         public object HttpServerUtility { get; private set; }
 
         [HttpGet]
-        public ActionResult<IEnumerable<ExperienceDTO>> Get()
+        public ActionResult<IEnumerable<Experience>> Get()
         {
             _experienceService.TestBlogging();
             return _experienceService.GetAllDTO(); 
         }
 
         [HttpPost]
-        public IEnumerable<ExperienceDTO> Post([FromBody] ExperienceDTO experienceDTO)
+        public IEnumerable<Experience> Post([FromBody] Experience experienceDTO)
         {
             _experienceService.AddToList(experienceDTO);
 

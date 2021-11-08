@@ -3,51 +3,12 @@ namespace Gogo.ModelData
 {
     public class Experience
     {
-        private DateTime StartDateTime;
+        public int ExperienceId { get; set; }
 
-        private DateTime EndDateTime;
+        public string Name { get; set; }
 
-        private string Name;
+        public string Description { get; set; }
 
-        private string Description;
-
-        private string Location;
-
-        public Experience(string n)
-        {
-            Name = n; 
-        }
-
-        public Experience(DateTime date)
-        {
-            StartDateTime = date;
-        }
-
-        public void SetDate(DateTime Start, DateTime End)
-        {
-            StartDateTime = Start;
-            EndDateTime = End;
-        }
-
-        public void SetLocation(string Place)
-        {
-            Location = Place;
-        }
-
-        public void SetDescription(string D)
-        {
-            Description = D;
-        }
-
-        public ExperienceDTO ToDTO()
-        {
-            return new ExperienceDTO
-            {
-                Description = Description,
-                Name = Name,
-                Location = Location,
-            };
-        }
+        public string Location { get; set; }
     }
-
 }
