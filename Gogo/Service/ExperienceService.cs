@@ -50,6 +50,9 @@ namespace Gogo.Service
 
         public void AddToList(ExperienceDTO experienceDTO)
         {
+            // Inserimento nel db
+
+
             Experience e2 = new Experience(experienceDTO.Name);
             e2.SetLocation(experienceDTO.Location);
             e2.SetDescription(experienceDTO.Description);
@@ -60,7 +63,7 @@ namespace Gogo.Service
         {
             var db = new BloggingContext();
             
-            var blogs = db.Blogs
+            List<Blog> blogs = db.Blogs
                 .Where(b => b.Rating > 3)
                 .OrderBy(b => b.Url)
                 .ToList();
